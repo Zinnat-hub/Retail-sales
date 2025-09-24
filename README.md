@@ -37,9 +37,9 @@ Tool used: **MySQL Workbench**
 ```sql
 SELECT gender, COUNT(customer_id) AS total_customers
 FROM customers
-GROUP BY gender; 
-<img width="649" height="93" alt="image" src="https://github.com/user-attachments/assets/4ec4e1fe-152f-4782-ab66-b4073511e0a6" />
+GROUP BY gender;
 
+```
 
 
 SELECT 
