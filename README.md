@@ -53,6 +53,7 @@ FROM customers
 GROUP BY age_group;
 ![Sales by Region](sales_by_region.png)
 
+### 2.Customer Count per Age Group 
 SELECT SUM(total_sale) AS total_revenue
 FROM sales;
 ![Sales by Region](sales_by_region.png)
