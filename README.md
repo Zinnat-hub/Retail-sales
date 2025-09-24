@@ -37,8 +37,10 @@ Tool used: **MySQL Workbench**
 ```sql
 SELECT gender, COUNT(customer_id) AS total_customers
 FROM customers
-GROUP BY gender;
-![Sales by Region](sales_by_region.png)
+GROUP BY gender; 
+<img width="649" height="93" alt="image" src="https://github.com/user-attachments/assets/4ec4e1fe-152f-4782-ab66-b4073511e0a6" />
+
+
 
 SELECT 
   CASE 
@@ -53,7 +55,6 @@ FROM customers
 GROUP BY age_group;
 ![Sales by Region](sales_by_region.png)
 
-### 2.Customer Count per Age Group 
 SELECT SUM(total_sale) AS total_revenue
 FROM sales;
 ![Sales by Region](sales_by_region.png)
