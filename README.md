@@ -38,10 +38,11 @@ Tool used: **MySQL Workbench**
 SELECT gender, COUNT(customer_id) AS total_customers
 FROM customers
 GROUP BY gender;
-
 ```
+![Gender Distribution](Images/Picture1.png)
 
-
+### 2. Customer Count per Age Group
+```sql
 SELECT 
   CASE 
     WHEN age BETWEEN 18 AND 25 THEN '18-25'
@@ -53,32 +54,114 @@ SELECT
   COUNT(customer_id) AS total_customers
 FROM customers
 GROUP BY age_group;
-![Sales by Region](sales_by_region.png)
 
+```
+![Customer Count per Age Group](Images/Picture2.png)
+
+### 3. Total Revenue
+```sql
 SELECT SUM(total_sale) AS total_revenue
 FROM sales;
-![Sales by Region](sales_by_region.png)
 
+```
+![Total Revenu](Images/Picture3.png)
+
+### 4. Revenue by Category
+```sql
 SELECT category, SUM(total_sale) AS revenue
 FROM sales
 GROUP BY category
 ORDER BY revenue DESC;
-![Sales by Region](sales_by_region.png)
 
+```
+![Revenue by Category](Images/Picture4.png)
+
+### 5. Average Order Value (AOV)
+```sql
 SELECT AVG(total_sale) AS average_order_value
 FROM sales;
-![Sales by Region](sales_by_region.png)
 
+```
+![Average Order Value (AOV)](Images/Picture5.png)
+
+### 6. Top 10 Customers by Sales
+```sql
 SELECT customer_id, SUM(total_sale) AS total_spent
 FROM sales
 GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 10;
-![Sales by Region](sales_by_region.png)
 
+```
+![Top 10 Customers by Sales](Images/Picture6.png)
+
+### 7. Top Products by Sales Volume
+```sql
 SELECT product_id, SUM(quantity) AS total_units_sold
 FROM sales
 GROUP BY product_id
 ORDER BY total_units_sold DESC
 LIMIT 10;
-![Sales by Region](sales_by_region.png)
+
+```
+![Top Products by Sales Volume](Images/Picture8.png)
+
+
+## 3.0 Project Questions and SQL Solutions
+### Q1: Retrieve all columns for sales made on '2022-11-05'
+```sql
+SELECT *
+FROM sales
+WHERE sale_date = '2022-11-05';
+```
+![ Retrieve all columns for sales made on '2022-11-05](Images/Picture9.png)
+
+### Q2: Retrieve transactions where category = 'Clothing' and quantity > 4 in November 2022
+```sql
+SELECT 
+  CASE 
+    WHEN age BETWEEN 18 AND 25 THEN '18-25'
+    WHEN age BETWEEN 26 AND 35 THEN '26-35'
+    WHEN age BETWEEN 36 AND 45 THEN '36-45'
+    WHEN age BETWEEN 46 AND 55 THEN '46-55'
+    ELSE '56+'
+  END AS age_group,
+  COUNT(customer_id) AS total_customers
+FROM customers
+GROUP BY age_group;
+```
+![Retrieve transactions where category = 'Clothing' and quantity > 4 in November 2022](Images/Picture10.png)
+
+### Q3: Calculate total sales for each category
+```sql
+SELECT category, SUM(total_sale) AS total_sales
+FROM sales
+GROUP BY category;
+```
+![ Calculate total sales for each category](Images/Picture11.png)
+
+### Q4: Average age of customers buying 'Beauty' products
+```sql
+SELECT AVG(age) AS avg_age
+FROM customers c
+JOIN sales s ON c.customer_id = s.customer_id
+WHERE s.category = 'Beauty';
+```
+![ Average age of customers buying 'Beauty' products](Images/Picture12.png)
+
+### Q5: Transactions with total sale > 1000
+```sql
+SELECT *
+FROM sales
+WHERE total_sale > 1000;
+```
+![Transactions with total sale > 1000](Images/Picture13.png)
+
+### Q6: Number of transactions by gender per category
+```sql
+SELECT c.gender, s.category, COUNT(s.transaction_id) AS total_transactions
+FROM sales s
+JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.gender, s.category;
+```
+![ Number of transactions by gender per category](Images/Picture10.png)
