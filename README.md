@@ -173,11 +173,7 @@ GROUP BY c.gender, s.category;
 ![ Number of transactions by gender per category](Images/Images/Picture14.png)
 ### Key findings: The analysis revealed that Female customers made more purchases in Beauty Category while Male customers dominated Clothing and Electronics. This shows clear gender preferences across product categories.
 
-
-## 4.0 Conclusion
-Peak Sales Period: Evening (after 5 PM) = highest activity. Category Performance: Clothing = top revenue + most unique customers. Customer Segmentation: Female → Beauty, Male → Clothing/Electronics. High-Value Customers: Customer ID 3 + premium buyers (>1000 purchases). Seasonality: July 2022 peak month, Nov 5th = strong sales day. Purchase Behavior: Clothing bought in small quantities. Demographics: Beauty buyers averaged 40 years old.
-
-## 5.0 Recommendations
+## 4.0 Recommendations
 
 📈 Leverage Evening Demand: Boost promotions & staffing during evenings.
 
@@ -192,3 +188,7 @@ Peak Sales Period: Evening (after 5 PM) = highest activity. Category Performance
 👵 Age-Based Marketing: Beauty campaigns targeting ~40-year-old customers.
 
 🔄 Encourage Repeat Purchases: Focus on repeat incentives vs. bulk offers.
+
+## 5.0 Conclusion
+Peak Sales Period: Evening (after 5 PM) = highest activity. Category Performance: Clothing = top revenue + most unique customers. Customer Segmentation: Female → Beauty, Male → Clothing/Electronics. High-Value Customers: Customer ID 3 + premium buyers (>1000 purchases). Seasonality: July 2022 peak month, Nov 5th = strong sales day. Purchase Behavior: Clothing bought in small quantities. Demographics: Beauty buyers averaged 40 years old.
+
